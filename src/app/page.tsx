@@ -1,5 +1,5 @@
 'use client';
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import logo from '@/assets/images/logo/logo.png';
@@ -17,8 +17,6 @@ const START_DELAY = 700;
 
 export default function Home() {
   const [typedText, setTypedText] = useState("");
-  const [isTypewriterComplete, setIsTypewriterComplete] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const springConfig = { damping: 15, stiffness: 150 };
 
   // Create spring animations for each letter
@@ -47,7 +45,6 @@ export default function Home() {
         i++;
         if (i === TYPEWRITER_TEXT.length) {
           clearInterval(intervalId);
-          setIsTypewriterComplete(true);
         }
       }, TYPEWRITER_DELAY);
 
@@ -82,7 +79,7 @@ export default function Home() {
       clearTimeout(startTimeout);
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, [eSpring.x, eSpring.y, exclamationSpring.x, exclamationSpring.y, hSpring.x, hSpring.y, ySpring.x, ySpring.y]);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F9F2FF]">

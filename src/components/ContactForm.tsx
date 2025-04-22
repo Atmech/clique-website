@@ -41,6 +41,12 @@ export default function ContactForm() {
         }),
       });
 
+      if (response.ok) {
+        alert('Thank you for your message! We will get back to you soon.');
+      } else {
+        alert('Failed to send message. Please try again later.');
+      }
+
       // Clear form after successful submission
       setFormData({
         firstName: '',
@@ -52,7 +58,6 @@ export default function ContactForm() {
         userType: 'business',
       });
 
-      alert('Thank you for your message! We will get back to you soon.');
     } catch (error) {
       console.error('Error sending email:', error);
       alert('Failed to send message. Please try again later.');
