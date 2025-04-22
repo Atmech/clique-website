@@ -1,102 +1,188 @@
+'use client';
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import logo from '@/assets/images/logo/logo.png';
+import instagram from '@/assets/images/socials/instagram.svg';
+import linkedin from '@/assets/images/socials/linkedin.svg';
+import h from '@/assets/images/heroImages/H.png';
+import e from '@/assets/images/heroImages/E.png';
+import y from '@/assets/images/heroImages/Y.png';
+import exclamation from '@/assets/images/heroImages/exclamation_mark.png';
+import ContactForm from '@/components/ContactForm';
+
+const TYPEWRITER_TEXT = "Coming Soon ...";
+const TYPEWRITER_DELAY = 150;
+const START_DELAY = 700;
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [typedText, setTypedText] = useState("");
+  const [isTypewriterComplete, setIsTypewriterComplete] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const springConfig = { damping: 15, stiffness: 150 };
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+  // Create spring animations for each letter
+  const hSpring = {
+    x: useSpring(0, springConfig),
+    y: useSpring(0, springConfig)
+  };
+  const eSpring = {
+    x: useSpring(0, springConfig),
+    y: useSpring(0, springConfig)
+  };
+  const ySpring = {
+    x: useSpring(0, springConfig),
+    y: useSpring(0, springConfig)
+  };
+  const exclamationSpring = {
+    x: useSpring(0, springConfig),
+    y: useSpring(0, springConfig)
+  };
+
+  useEffect(() => {
+    const startTimeout = setTimeout(() => {
+      let i = 0;
+      const intervalId = setInterval(() => {
+        setTypedText(TYPEWRITER_TEXT.slice(0, i + 1));
+        i++;
+        if (i === TYPEWRITER_TEXT.length) {
+          clearInterval(intervalId);
+          setIsTypewriterComplete(true);
+        }
+      }, TYPEWRITER_DELAY);
+
+      return () => clearInterval(intervalId);
+    }, START_DELAY);
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      
+      // Calculate distance from center (normalized)
+      const moveX = (clientX - centerX) / centerX;
+      const moveY = (clientY - centerY) / centerY;
+      
+      // Update spring animations with different intensities
+      hSpring.x.set(moveX * 20);
+      hSpring.y.set(moveY * 20);
+      
+      eSpring.x.set(moveX * 30);
+      eSpring.y.set(moveY * 30);
+      
+      ySpring.x.set(moveX * 40);
+      ySpring.y.set(moveY * 40);
+      
+      exclamationSpring.x.set(moveX * 50);
+      exclamationSpring.y.set(moveY * 50);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      clearTimeout(startTimeout);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col bg-[#F9F2FF]">
+      {/* Header */}
+      <header className="px-8 py-6 flex items-center justify-between max-w-7xl mx-auto w-full">
+        <Image
+          src={logo}
+          alt="Cliqit Media"
+          width={150}
+          height={40}
+          priority
+          className="w-auto"
+        />
+        <div className="flex items-center gap-6">
+          <a href="https://www.instagram.com/cliqitmedia/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+            <Image src={instagram} alt="Instagram" width={24} height={24} />
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+          <a href="https://www.linkedin.com/company/cliqit-media/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+            <Image src={linkedin} alt="LinkedIn" width={24} height={24} />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </header>
+
+      {/* Hero Section */}
+      <section className="flex-1 flex flex-col items-center justify-center text-center px-4 min-h-screen">
+        <motion.div 
+          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          <h1 className="text-[#4A2B5C] leading-tight">
+            <span className="font-medium block mb-4 text-4xl">Stay Tuned!</span>
+            <span className="block text-2xl">{typedText}</span>
+          </h1>
+        </motion.div>
+        <div className="relative w-full max-w-4xl flex justify-center items-center gap-4">
+          <motion.div style={{ x: hSpring.x, y: hSpring.y }} className="w-32 md:w-40">
+            <Image
+              src={h}
+              alt="H"
+              width={200}
+              height={200}
+              className="w-full h-auto"
+              priority
+            />
+          </motion.div>
+          <motion.div style={{ x: eSpring.x, y: eSpring.y }} className="w-32 md:w-40">
+            <Image
+              src={e}
+              alt="E"
+              width={200}
+              height={200}
+              className="w-full h-auto"
+              priority
+            />
+          </motion.div>
+          <motion.div style={{ x: ySpring.x, y: ySpring.y }} className="w-32 md:w-40">
+            <Image
+              src={y}
+              alt="Y"
+              width={200}
+              height={200}
+              className="w-full h-auto"
+              priority
+            />
+          </motion.div>
+          <motion.div style={{ x: exclamationSpring.x, y: exclamationSpring.y }} className="w-32 md:w-40">
+            <Image
+              src={exclamation}
+              alt="!"
+              width={200}
+              height={200}
+              className="w-full h-auto"
+              priority
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Form Section */}
+      <section className="min-h-screen flex items-center justify-center bg-[#F9F2FF] px-4">
+        <div className="w-full py-20">
+          <ContactForm />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="p-6 flex justify-between items-center max-w-7xl mx-auto w-full">
+        <div className="text-sm text-[#4A2B5C]">
+          <div>business@cliqit.co</div>
+          <div>Pune, India</div>
+        </div>
+        <Image
+          src={logo}
+          alt="Cliqit Media"
+          width={80}
+          height={30}
+          className="h-6 w-auto"
+        />
       </footer>
     </div>
   );
