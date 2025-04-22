@@ -1,4 +1,3 @@
-// app/api/send-email/route.js
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
@@ -11,11 +10,11 @@ const transporter = nodemailer.createTransport({
 } as nodemailer.TransportOptions);
 
 export async function POST(req: Request) {
-  const { subject, text, html } = await req.json();
+  const { subject, text, to, html } = await req.json();
 
   const mailOptions = { 
     from: "business@cliqit.co",
-    to: "mohammadsami@duck.com",
+    to,
     subject,
     text,
     html,
@@ -34,4 +33,4 @@ export async function POST(req: Request) {
       { status: 500 }
     );
   }
-}
+} 

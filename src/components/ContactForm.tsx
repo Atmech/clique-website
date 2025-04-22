@@ -39,10 +39,6 @@ export default function ContactForm() {
         }),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to send email');
-      }
-
       // Clear form after successful submission
       setFormData({
         firstName: '',
