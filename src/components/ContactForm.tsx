@@ -15,9 +15,49 @@ export default function ContactForm() {
     socialHandle: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: 'business@cliqit.co',
+          subject: 'New Contact Form Submission',
+          text: `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}\nSocial Handle: ${formData.socialHandle}`,
+          html: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
+            <p><strong>Email:</strong> ${formData.email}</p>
+            <p><strong>Phone:</strong> ${formData.phone}</p>
+            <p><strong>Message:</strong> ${formData.message}</p>
+            <p><strong>Social Handle:</strong> ${formData.socialHandle}</p>
+          `,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      // Clear form after successful submission
+      setFormData({
+        firstName: '',
+        lastName: '',
+        phone: '',
+        email: '',
+        message: '',
+        socialHandle: '',
+      });
+
+      alert('Thank you for your message! We will get back to you soon.');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send message. Please try again later.');
+    }
   };
 
   const handleChange = (
