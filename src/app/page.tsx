@@ -87,21 +87,21 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F9F2FF]">
       {/* Header */}
-      <header className="px-8 py-6 flex items-center justify-between max-w-7xl mx-auto w-full">
+      <header className="px-4 sm:px-8 py-4 sm:py-6 flex items-center justify-between max-w-7xl mx-auto w-full">
         <Image
           src={logo}
           alt="Cliqit Media"
           width={150}
           height={40}
           priority
-          className="w-auto"
+          className="w-[120px] sm:w-[150px]"
         />
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 sm:gap-6">
           <a href="https://www.instagram.com/cliqitmedia/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-            <Image src={instagram} alt="Instagram" width={24} height={24} />
+            <Image src={instagram} alt="Instagram" width={24} height={24} className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
           <a href="https://www.linkedin.com/company/cliqit-media/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-            <Image src={linkedin} alt="LinkedIn" width={24} height={24} />
+            <Image src={linkedin} alt="LinkedIn" width={24} height={24} className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
         </div>
       </header>
@@ -109,18 +109,18 @@ export default function Home() {
       {/* Hero Section */}
       <section className="flex-1 flex flex-col items-center justify-center text-center px-4 min-h-screen">
         <motion.div 
-          className="mb-12"
+          className="mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-[#4A2B5C] leading-tight">
-            <span className="font-medium block mb-4 text-4xl">Stay Tuned!</span>
-            <span className="block text-2xl">{typedText}</span>
+            <span className="font-medium block mb-2 sm:mb-4 text-4xl sm:text-6xl">Stay Tuned!</span>
+            <span className="block text-2xl sm:text-4xl">{typedText}</span>
           </h1>
         </motion.div>
         <div className="relative w-full max-w-4xl flex justify-center items-center">
-          <motion.div style={{ x: hSpring.x, y: hSpring.y }} className="w-64 md:w-96">
+          <motion.div style={{ x: hSpring.x, y: hSpring.y }} className="w-40 sm:w-64 md:w-96">
             <Image
               src={h}
               alt="H"
@@ -130,7 +130,7 @@ export default function Home() {
               priority
             />
           </motion.div>
-          <motion.div style={{ x: eSpring.x, y: eSpring.y }} className="w-64 md:w-96">
+          <motion.div style={{ x: eSpring.x, y: eSpring.y }} className="w-40 sm:w-64 md:w-96">
             <Image
               src={e}
               alt="E"
@@ -140,7 +140,7 @@ export default function Home() {
               priority
             />
           </motion.div>
-          <motion.div style={{ x: ySpring.x, y: ySpring.y }} className="w-64 md:w-96">
+          <motion.div style={{ x: ySpring.x, y: ySpring.y }} className="w-40 sm:w-64 md:w-96">
             <Image
               src={y}
               alt="Y"
@@ -150,7 +150,7 @@ export default function Home() {
               priority
             />
           </motion.div>
-          <motion.div style={{ x: exclamationSpring.x, y: exclamationSpring.y }} className="w-64 md:w-96">
+          <motion.div style={{ x: exclamationSpring.x, y: exclamationSpring.y }} className="w-40 sm:w-64 md:w-96">
             <Image
               src={exclamation}
               alt="!"
@@ -165,14 +165,14 @@ export default function Home() {
 
       {/* Form Section */}
       <section className="min-h-screen flex items-center justify-center bg-[#F9F2FF] px-4">
-        <div className="w-full py-20">
+        <div className="w-full max-w-2xl py-12 sm:py-20">
           <ContactForm />
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="p-6 flex justify-between items-center max-w-7xl mx-auto w-full">
-        <div className="text-sm text-[#4A2B5C]">
+      <footer className="p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 max-w-7xl mx-auto w-full">
+        <div className="text-sm text-[#4A2B5C] text-center sm:text-left">
           <div>business@cliqit.co</div>
           <div>Pune, India</div>
         </div>
@@ -181,7 +181,7 @@ export default function Home() {
           alt="Cliqit Media"
           width={80}
           height={30}
-          className="h-6 w-auto"
+          className="h-5 sm:h-6 w-auto"
         />
       </footer>
     </div>
