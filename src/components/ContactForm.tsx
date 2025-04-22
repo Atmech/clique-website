@@ -121,6 +121,18 @@ export default function ContactForm() {
             />
           </div>
 
+          <div>
+            <label className="block text-white text-sm mb-2">Social Handle</label>
+            <input
+              type="text"
+              name="socialHandle"
+              value={formData.socialHandle}
+              onChange={handleChange}
+              placeholder="Your social media handle"
+              className="w-full h-12 px-4 rounded-lg bg-[#EDE8F2] placeholder:text-[#4A2B5C] text-[#4A2B5C] text-sm focus:ring-2 focus:ring-[#9B6AB1] focus:outline-none"
+            />
+          </div>
+
           <div className="flex justify-end">
             <button
               type="submit"
