@@ -26,7 +26,7 @@ export default function ContactForm() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          to: 'mohammadsami@duck.com',
+          to: 'business@cliqit.co',
           subject: 'New Contact Form Submission',
           text: `User Type: ${formData.userType}\nName: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}\nSocial Handle: ${formData.socialHandle}`,
           html: `

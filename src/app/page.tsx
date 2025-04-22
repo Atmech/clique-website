@@ -11,7 +11,7 @@ import y from '@/assets/images/heroImages/Y.png';
 import exclamation from '@/assets/images/heroImages/exclamation_mark.png';
 import ContactForm from '@/components/ContactForm';
 
-const TYPEWRITER_TEXT = "Coming Soon ...";
+const TYPEWRITER_TEXT = "We Are Launching Soon ...";
 const TYPEWRITER_DELAY = 150;
 const START_DELAY = 700;
 
@@ -104,7 +104,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="flex-1 flex flex-col items-center justify-center text-center px-4 min-h-screen">
+      <section className="flex-1 flex flex-col items-center justify-center text-center px-4 min-h-[50vh] sm:min-h-screen -mt-16 sm:-mt-24">
         <motion.div 
           className="mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
