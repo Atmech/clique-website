@@ -13,6 +13,7 @@ export default function ContactForm() {
     email: '',
     message: '',
     socialHandle: '',
+    userType: 'business',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -27,9 +28,10 @@ export default function ContactForm() {
         body: JSON.stringify({
           to: 'business@cliqit.co',
           subject: 'New Contact Form Submission',
-          text: `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}\nSocial Handle: ${formData.socialHandle}`,
+          text: `User Type: ${formData.userType}\nName: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}\nSocial Handle: ${formData.socialHandle}`,
           html: `
             <h2>New Contact Form Submission</h2>
+            <p><strong>User Type:</strong> ${formData.userType}</p>
             <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
             <p><strong>Email:</strong> ${formData.email}</p>
             <p><strong>Phone:</strong> ${formData.phone}</p>
@@ -47,6 +49,7 @@ export default function ContactForm() {
         email: '',
         message: '',
         socialHandle: '',
+        userType: 'business',
       });
 
       alert('Thank you for your message! We will get back to you soon.');
@@ -63,12 +66,37 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-   
-
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
       <div className="w-full max-w-md bg-[#3C184E] rounded-2xl p-8 shadow-lg">
         <h2 className="text-white text-2xl font-medium mb-6">Contact us</h2>
+        
+        {/* User Type Selection Tabs */}
+        <div className="flex mb-6 bg-[#4A2B5C] rounded-lg p-1">
+          <button
+            type="button"
+            onClick={() => setFormData(prev => ({ ...prev, userType: 'business' }))}
+            className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+              formData.userType === 'business'
+                ? 'bg-[#EDE8F2] text-[#3C184E]'
+                : 'text-[#EDE8F2] hover:bg-[#5A3B6C]'
+            }`}
+          >
+            Business
+          </button>
+          <button
+            type="button"
+            onClick={() => setFormData(prev => ({ ...prev, userType: 'influencer' }))}
+            className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+              formData.userType === 'influencer'
+                ? 'bg-[#EDE8F2] text-[#3C184E]'
+                : 'text-[#EDE8F2] hover:bg-[#5A3B6C]'
+            }`}
+          >
+            Influencer
+          </button>
+        </div>
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-white text-sm mb-2">First name</label>

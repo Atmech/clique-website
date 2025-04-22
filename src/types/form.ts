@@ -13,4 +13,5 @@ export type FormData = {
   email: string;
   message: string;
   socialHandle: string;
+  userType: 'business' | 'influencer';
 }; 
