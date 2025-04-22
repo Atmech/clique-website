@@ -64,17 +64,17 @@ export default function Home() {
       const moveY = (clientY - centerY) / centerY;
       
       // Update spring animations with different intensities
-      hSpring.x.set(moveX * 20);
-      hSpring.y.set(moveY * 20);
+      hSpring.x.set(moveX * 200);
+      hSpring.y.set(moveY * 200);
       
-      eSpring.x.set(moveX * 30);
-      eSpring.y.set(moveY * 30);
+      eSpring.x.set(moveX * 100);
+      eSpring.y.set(moveY * 100);
       
-      ySpring.x.set(moveX * 40);
-      ySpring.y.set(moveY * 40);
-      
-      exclamationSpring.x.set(moveX * 50);
-      exclamationSpring.y.set(moveY * 50);
+      ySpring.x.set(moveX * 160);
+      ySpring.y.set(moveY * 160);
+    
+      exclamationSpring.x.set(moveX * 200);
+      exclamationSpring.y.set(moveY * 200);
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -119,43 +119,43 @@ export default function Home() {
             <span className="block text-2xl">{typedText}</span>
           </h1>
         </motion.div>
-        <div className="relative w-full max-w-4xl flex justify-center items-center gap-4">
-          <motion.div style={{ x: hSpring.x, y: hSpring.y }} className="w-32 md:w-40">
+        <div className="relative w-full max-w-4xl flex justify-center items-center">
+          <motion.div style={{ x: hSpring.x, y: hSpring.y }} className="w-64 md:w-96">
             <Image
               src={h}
               alt="H"
-              width={200}
-              height={200}
+              width={600}
+              height={600}
               className="w-full h-auto"
               priority
             />
           </motion.div>
-          <motion.div style={{ x: eSpring.x, y: eSpring.y }} className="w-32 md:w-40">
+          <motion.div style={{ x: eSpring.x, y: eSpring.y }} className="w-64 md:w-96">
             <Image
               src={e}
               alt="E"
-              width={200}
-              height={200}
+              width={600}
+              height={600}
               className="w-full h-auto"
               priority
             />
           </motion.div>
-          <motion.div style={{ x: ySpring.x, y: ySpring.y }} className="w-32 md:w-40">
+          <motion.div style={{ x: ySpring.x, y: ySpring.y }} className="w-64 md:w-96">
             <Image
               src={y}
               alt="Y"
-              width={200}
-              height={200}
+              width={600}
+              height={600}
               className="w-full h-auto"
               priority
             />
           </motion.div>
-          <motion.div style={{ x: exclamationSpring.x, y: exclamationSpring.y }} className="w-32 md:w-40">
+          <motion.div style={{ x: exclamationSpring.x, y: exclamationSpring.y }} className="w-64 md:w-96">
             <Image
               src={exclamation}
               alt="!"
-              width={200}
-              height={200}
+              width={600}
+              height={600}
               className="w-full h-auto"
               priority
             />
