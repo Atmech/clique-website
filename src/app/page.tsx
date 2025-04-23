@@ -12,8 +12,8 @@ import exclamation from '@/assets/images/heroImages/exclamation_mark.png';
 import ContactForm from '@/components/ContactForm';
 import Modal from '@/components/Modal';
 
-const TYPEWRITER_TEXT = "We Are Launching Soon ...";
-const TYPEWRITER_DELAY = 150;
+const TYPEWRITER_TEXT = "Not just a platform, a whole vibe. Stay tuned ...";
+const TYPEWRITER_DELAY = 100;
 const START_DELAY = 700;
 
 export default function Home() {
@@ -86,27 +86,27 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F9F2FF]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 flex items-center justify-between w-full bg-[#F9F2FF]/95 backdrop-blur-sm z-30">
+      <header className="fixed top-0 left-0 right-0 px-4 sm:px-6 md:px-8 py-1 sm:py-2 md:py-3 flex items-center justify-between w-full">
         <Image
           src={logo}
-          alt="Cliqit Media"
-          width={150}
-          height={40}
+          alt="CLIQIT"
+          width={200}
+          height={80}
           priority
-          className="w-[100px] sm:w-[120px] md:w-[150px]"
+          className="w-[80px] sm:w-[120px] md:w-[200px] h-auto"
         />
-        <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
+        <div className="flex items-center gap-2.5 sm:gap-3.5 md:gap-5">
           <a href="https://www.instagram.com/cliqit.in/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-            <Image src={instagram} alt="Instagram" width={24} height={24} className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+            <Image src={instagram} alt="Instagram" width={20} height={20} className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
           </a>
           <a href="https://www.linkedin.com/company/cliqit-media/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-            <Image src={linkedin} alt="LinkedIn" width={24} height={24} className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+            <Image src={linkedin} alt="LinkedIn" width={20} height={20} className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
           </a>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="flex-1 flex flex-col items-center justify-center text-center px-4 min-h-screen pt-16 sm:pt-20">
+      <section className="flex-1 flex flex-col items-center justify-center text-center px-4 min-h-screen pt-12 sm:pt-14 md:pt-16">
         <motion.div 
           className="mb-6 sm:mb-8 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -114,7 +114,14 @@ export default function Home() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-[#4A2B5C] leading-tight">
-            <span className="font-medium block mb-2 sm:mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Stay Tuned!</span>
+            <motion.span
+              className="font-medium block mb-2 sm:mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              Almost time to CLIQ into something iconic !
+            </motion.span>
             <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl">{typedText}</span>
           </h1>
         </motion.div>
