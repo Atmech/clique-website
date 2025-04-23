@@ -12,7 +12,7 @@ import exclamation from '@/assets/images/heroImages/exclamation_mark.png';
 import ContactForm from '@/components/ContactForm';
 import Modal from '@/components/Modal';
 
-const TYPEWRITER_TEXT = " Not just a platform, a whole vibe !";
+const TYPEWRITER_TEXT = " Not just a platform, a whole vibe!";
 const TYPEWRITER_DELAY = 100;
 const START_DELAY = 700;
 
@@ -120,7 +120,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Almost time to CLIQ into something iconic ! 
+              Almost time to CLIQ into something iconic.
             </motion.span>
             <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl">{typedText}</span>
           </h1>
@@ -194,9 +194,9 @@ export default function Home() {
         <Image
           src={logo}
           alt="Cliqit Media"
-          width={80}
-          height={30}
-          className="h-4 sm:h-5 md:h-6 w-auto"
+          width={120}
+          height={45}
+          className="h-32 sm:h-32 md:h-52 w-auto"
         />
       </footer>
 
