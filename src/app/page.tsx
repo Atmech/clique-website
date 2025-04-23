@@ -10,6 +10,7 @@ import e from '@/assets/images/heroImages/E.png';
 import y from '@/assets/images/heroImages/Y.png';
 import exclamation from '@/assets/images/heroImages/exclamation_mark.png';
 import ContactForm from '@/components/ContactForm';
+import Modal from '@/components/Modal';
 
 const TYPEWRITER_TEXT = "We Are Launching Soon ...";
 const TYPEWRITER_DELAY = 150;
@@ -17,6 +18,7 @@ const START_DELAY = 700;
 
 export default function Home() {
   const [typedText, setTypedText] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const springConfig = { damping: 15, stiffness: 150 };
 
   // Create spring animations for each letter
@@ -84,40 +86,40 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F9F2FF]">
       {/* Header */}
-      <header className="px-4 sm:px-8 py-4 sm:py-6 flex items-center justify-between max-w-7xl mx-auto w-full">
+      <header className="fixed top-0 left-0 right-0 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 flex items-center justify-between w-full bg-[#F9F2FF]/95 backdrop-blur-sm z-30">
         <Image
           src={logo}
           alt="Cliqit Media"
           width={150}
           height={40}
           priority
-          className="w-[120px] sm:w-[150px]"
+          className="w-[100px] sm:w-[120px] md:w-[150px]"
         />
-        <div className="flex items-center gap-4 sm:gap-6">
+        <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
           <a href="https://www.instagram.com/cliqitmedia/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-            <Image src={instagram} alt="Instagram" width={24} height={24} className="w-5 h-5 sm:w-6 sm:h-6" />
+            <Image src={instagram} alt="Instagram" width={24} height={24} className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </a>
           <a href="https://www.linkedin.com/company/cliqit-media/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-            <Image src={linkedin} alt="LinkedIn" width={24} height={24} className="w-5 h-5 sm:w-6 sm:h-6" />
+            <Image src={linkedin} alt="LinkedIn" width={24} height={24} className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </a>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="flex-1 flex flex-col items-center justify-center text-center px-4 min-h-[50vh] sm:min-h-screen -mt-16 sm:-mt-24">
+      <section className="flex-1 flex flex-col items-center justify-center text-center px-4 min-h-screen pt-16 sm:pt-20">
         <motion.div 
-          className="mb-8 sm:mb-12"
+          className="mb-6 sm:mb-8 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-[#4A2B5C] leading-tight">
-            <span className="font-medium block mb-2 sm:mb-4 text-4xl sm:text-6xl">Stay Tuned!</span>
-            <span className="block text-2xl sm:text-4xl">{typedText}</span>
+            <span className="font-medium block mb-2 sm:mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Stay Tuned!</span>
+            <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl">{typedText}</span>
           </h1>
         </motion.div>
-        <div className="relative w-full max-w-4xl flex justify-center items-center">
-          <motion.div style={{ x: hSpring.x, y: hSpring.y }} className="w-40 sm:w-64 md:w-96">
+        <div className="relative w-full max-w-4xl flex justify-center items-center px-4 sm:px-6">
+          <motion.div style={{ x: hSpring.x, y: hSpring.y }} className="w-24 sm:w-40 md:w-64 lg:w-96">
             <Image
               src={h}
               alt="H"
@@ -127,7 +129,7 @@ export default function Home() {
               priority
             />
           </motion.div>
-          <motion.div style={{ x: eSpring.x, y: eSpring.y }} className="w-40 sm:w-64 md:w-96">
+          <motion.div style={{ x: eSpring.x, y: eSpring.y }} className="w-24 sm:w-40 md:w-64 lg:w-96">
             <Image
               src={e}
               alt="E"
@@ -137,7 +139,7 @@ export default function Home() {
               priority
             />
           </motion.div>
-          <motion.div style={{ x: ySpring.x, y: ySpring.y }} className="w-40 sm:w-64 md:w-96">
+          <motion.div style={{ x: ySpring.x, y: ySpring.y }} className="w-24 sm:w-40 md:w-64 lg:w-96">
             <Image
               src={y}
               alt="Y"
@@ -147,7 +149,7 @@ export default function Home() {
               priority
             />
           </motion.div>
-          <motion.div style={{ x: exclamationSpring.x, y: exclamationSpring.y }} className="w-40 sm:w-64 md:w-96">
+          <motion.div style={{ x: exclamationSpring.x, y: exclamationSpring.y }} className="w-24 sm:w-40 md:w-64 lg:w-96">
             <Image
               src={exclamation}
               alt="!"
@@ -160,16 +162,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Form Section */}
-      <section className="min-h-screen flex items-center justify-center bg-[#F9F2FF] px-4">
-        <div className="w-full max-w-2xl py-12 sm:py-20">
-          <ContactForm />
-        </div>
+      {/* Contact Section */}
+      <section className="py-12 sm:py-16 md:py-24 flex flex-col items-center justify-center text-center px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="px-6 sm:px-8 py-2.5 sm:py-3 bg-[#3C184E] text-white rounded-full hover:bg-[#4A2B5C] transition-colors text-base sm:text-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
+          >
+            Contact Us
+          </button>
+        </motion.div>
       </section>
 
       {/* Footer */}
-      <footer className="p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 max-w-7xl mx-auto w-full">
-        <div className="text-sm text-[#4A2B5C] text-center sm:text-left">
+      <footer className="p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 max-w-7xl mx-auto w-full">
+        <div className="text-xs sm:text-sm text-[#4A2B5C] text-center sm:text-left">
           <div>business@cliqit.co</div>
           <div>Pune, India</div>
         </div>
@@ -178,9 +189,14 @@ export default function Home() {
           alt="Cliqit Media"
           width={80}
           height={30}
-          className="h-5 sm:h-6 w-auto"
+          className="h-4 sm:h-5 md:h-6 w-auto"
         />
       </footer>
+
+      {/* Contact Form Modal */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <ContactForm />
+      </Modal>
     </div>
   );
 }
