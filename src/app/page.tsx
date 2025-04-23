@@ -93,7 +93,7 @@ export default function Home() {
           width={250}
           height={100}
           priority
-          className="w-[80px] sm:w-[120px] md:w-[250px] h-auto"
+          className="w-[180px] sm:w-[200px] md:w-[250px] h-auto"
         />
         <div className="flex items-center gap-2.5 sm:gap-3.5 md:gap-5">
           <a href="https://www.instagram.com/cliqit.in/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
