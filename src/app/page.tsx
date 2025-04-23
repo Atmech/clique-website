@@ -12,7 +12,7 @@ import exclamation from '@/assets/images/heroImages/exclamation_mark.png';
 import ContactForm from '@/components/ContactForm';
 import Modal from '@/components/Modal';
 
-const TYPEWRITER_TEXT = "Not just a platform, a whole vibe. Stay tuned ...";
+const TYPEWRITER_TEXT = " Not just a platform, a whole vibe !";
 const TYPEWRITER_DELAY = 100;
 const START_DELAY = 700;
 
@@ -90,10 +90,10 @@ export default function Home() {
         <Image
           src={logo}
           alt="CLIQIT"
-          width={200}
-          height={80}
+          width={250}
+          height={100}
           priority
-          className="w-[80px] sm:w-[120px] md:w-[200px] h-auto"
+          className="w-[80px] sm:w-[120px] md:w-[250px] h-auto"
         />
         <div className="flex items-center gap-2.5 sm:gap-3.5 md:gap-5">
           <a href="https://www.instagram.com/cliqit.in/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
@@ -115,12 +115,12 @@ export default function Home() {
         >
           <h1 className="text-[#4A2B5C] leading-tight">
             <motion.span
-              className="font-medium block mb-2 sm:mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+              className="font-bold block mb-2 sm:mb-4 text-1xl sm:text-2xl md:text-3xl lg:text-4xl"
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Almost time to CLIQ into something iconic !
+              Almost time to CLIQ into something iconic ! 
             </motion.span>
             <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl">{typedText}</span>
           </h1>
