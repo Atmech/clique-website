@@ -96,7 +96,7 @@ export default function Home() {
           className="w-[100px] sm:w-[120px] md:w-[150px]"
         />
         <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
-          <a href="https://www.instagram.com/cliqitmedia/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+          <a href="https://www.instagram.com/cliqit.in/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
             <Image src={instagram} alt="Instagram" width={24} height={24} className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </a>
           <a href="https://www.linkedin.com/company/cliqit-media/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
