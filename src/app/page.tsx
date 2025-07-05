@@ -1,7 +1,6 @@
 'use client';
 import { motion, useSpring } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import logo from '@/assets/images/logo/logo.png';
 import instagram from '@/assets/images/socials/instagram.svg';
