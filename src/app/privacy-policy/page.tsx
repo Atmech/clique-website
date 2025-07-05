@@ -335,7 +335,6 @@ export default function PrivacyPolicy() {
               <h3 className="text-xl font-bold text-[#4A2B5C] mb-4">11. HOW CAN YOU CONTACT US OR EXERCISE YOUR RIGHTS?</h3>
               <ul className="list-disc pl-6 mb-4">
                 <li><strong>Email:</strong> <a href="mailto:privacy@cliqit.co" className="text-blue-600 hover:underline">privacy@cliqit.co</a></li>
-                <li><strong>Online form:</strong> <a href="https://cliqit.co/privacy-request" className="text-blue-600 hover:underline">https://cliqit.co/privacy-request</a></li>
                 <li><strong>Post:</strong> Compliance Desk, Cliqit Digital Media LLP, S. No 1A/1/2, Brahma I‑stet, Kondhwa Kh, Pune 411048, India.</li>
               </ul>
             </section>
@@ -350,6 +349,16 @@ export default function PrivacyPolicy() {
             <p className="text-center text-sm text-gray-600">
               © 2025 Cliqit Digital Media LLP—All rights reserved.
             </p>
+
+            <div className="text-center mt-8 pt-6 border-t border-gray-200">
+              <p className="text-sm text-gray-600 mb-2">Related Legal Documents:</p>
+              <Link 
+                href="/terms-conditions" 
+                className="text-blue-600 hover:text-blue-800 hover:underline font-medium"
+              >
+                Terms & Conditions
+              </Link>
+            </div>
           </div>
         </motion.div>
       </main>
