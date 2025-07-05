@@ -116,6 +116,9 @@ export default function Home() {
           <a href="/contact" className="text-[#4A2B5C] hover:text-[#3C184E] transition-colors font-medium text-sm sm:text-base">
             Contact
           </a>
+          <a href="/privacy-policy" className="text-[#4A2B5C] hover:text-[#3C184E] transition-colors font-medium text-sm sm:text-base">
+            Privacy
+          </a>
           <a href="https://www.instagram.com/cliqit.in/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
             <Image src={instagram} alt="Instagram" width={20} height={20} className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
           </a>
