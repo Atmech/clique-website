@@ -39,7 +39,7 @@ export default function TermsConditions() {
 
           <div className="prose prose-lg max-w-none text-[#4A2B5C]">
             <p className="mb-6">
-              These Terms & Conditions ("<strong>Terms</strong>") govern your access to and use of the <strong>Cliqit</strong> mobile application, cliqit.co website, and related dashboards (collectively, the "<strong>Services</strong>"), operated by <strong>Cliqit Digital Media LLP</strong> ("<strong>Cliqit</strong>", "<strong>we</strong>", "<strong>our</strong>").
+              These Terms & Conditions (&ldquo;<strong>Terms</strong>&rdquo;) govern your access to and use of the <strong>Cliqit</strong> mobile application, cliqit.co website, and related dashboards (collectively, the &ldquo;<strong>Services</strong>&rdquo;), operated by <strong>Cliqit Digital Media LLP</strong> (&ldquo;<strong>Cliqit</strong>&rdquo;, &ldquo;<strong>we</strong>&rdquo;, &ldquo;<strong>our</strong>&rdquo;).
             </p>
             
             <p className="mb-8 font-semibold">
@@ -51,11 +51,11 @@ export default function TermsConditions() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-[#4A2B5C] mb-4">1. DEFINITIONS</h2>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>"Influencer"</strong> – a user who applies for or accepts offers published via the Services.</li>
-                <li><strong>"Business"</strong> – a user (venue, brand, or agency) that creates offers or events on the Services.</li>
-                <li><strong>"Offer"</strong> – a barter opportunity posted by a Business (e.g., free meal in exchange for social‑media content).</li>
-                <li><strong>"Booking"</strong> – the confirmed agreement between an Influencer and a Business for an Offer or Event.</li>
-                <li><strong>"Content"</strong> – text, photos, videos, reviews or any material submitted, published, or displayed in the Services.</li>
+                <li><strong>&ldquo;Influencer&rdquo;</strong> – a user who applies for or accepts offers published via the Services.</li>
+                <li><strong>&ldquo;Business&rdquo;</strong> – a user (venue, brand, or agency) that creates offers or events on the Services.</li>
+                <li><strong>&ldquo;Offer&rdquo;</strong> – a barter opportunity posted by a Business (e.g., free meal in exchange for social‑media content).</li>
+                <li><strong>&ldquo;Booking&rdquo;</strong> – the confirmed agreement between an Influencer and a Business for an Offer or Event.</li>
+                <li><strong>&ldquo;Content&rdquo;</strong> – text, photos, videos, reviews or any material submitted, published, or displayed in the Services.</li>
               </ul>
             </section>
 
@@ -104,7 +104,7 @@ export default function TermsConditions() {
               <ol className="list-decimal pl-6 mb-6 space-y-3">
                 <li><strong>Non‑Payment Model.</strong> Offers are barter‑only; Cliqit does not process payments.</li>
                 <li><strong>Business Right to Cancel.</strong> Businesses may cancel a Booking up to 24 hours before the scheduled time via dashboard.</li>
-                <li><strong>Influencer No‑Show.</strong> If an Influencer fails to appear at the venue within the allotted window, the Booking is automatically cancelled <strong>and one (1) "Strike" is recorded against the Influencer's account. An account that accumulates three (3) Strikes within any rolling 12‑month period will be permanently banned from the Services.</strong></li>
+                <li><strong>Influencer No‑Show.</strong> If an Influencer fails to appear at the venue within the allotted window, the Booking is automatically cancelled <strong>and one (1) &ldquo;Strike&rdquo; is recorded against the Influencer&apos;s account. An account that accumulates three (3) Strikes within any rolling 12‑month period will be permanently banned from the Services.</strong></li>
                 <li><strong>Dispute Resolution Between Users.</strong> Parties should first attempt to resolve disagreements directly; Cliqit may, at its discretion, mediate but is not obliged to do so.</li>
               </ol>
             </section>
@@ -126,14 +126,14 @@ export default function TermsConditions() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-[#4A2B5C] mb-4">9. DISCLAIMER OF WARRANTIES</h2>
               <p className="mb-6">
-                The Services are provided <strong>"AS IS" and "AS AVAILABLE"</strong> without warranties of any kind, whether express or implied, including merchantability, fitness for a particular purpose, and non‑infringement.
+                The Services are provided <strong>&ldquo;AS IS&rdquo; and &ldquo;AS AVAILABLE&rdquo;</strong> without warranties of any kind, whether express or implied, including merchantability, fitness for a particular purpose, and non‑infringement.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-[#4A2B5C] mb-4">10. LIMITATION OF LIABILITY</h2>
               <p className="mb-6">
-                To the maximum extent permitted by the Indian Contract Act and applicable law, <strong>Cliqit's total liability</strong> arising out of or in connection with these Terms or the Services shall not exceed <strong>INR 10,000</strong>. In no event shall Cliqit be liable for indirect, punitive, incidental, special or consequential damages.
+                To the maximum extent permitted by the Indian Contract Act and applicable law, <strong>Cliqit&apos;s total liability</strong> arising out of or in connection with these Terms or the Services shall not exceed <strong>INR 10,000</strong>. In no event shall Cliqit be liable for indirect, punitive, incidental, special or consequential damages.
               </p>
             </section>
 
