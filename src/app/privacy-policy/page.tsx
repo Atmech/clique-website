@@ -123,11 +123,11 @@ export default function PrivacyPolicy() {
                   <tbody>
                     <tr>
                       <td className="border border-gray-300 px-4 py-2 font-semibold">Identity & Contact</td>
-                      <td className="border border-gray-300 px-4 py-2">name, username, email, phone</td>
+                      <td className="border border-gray-300 px-4 py-2">name, username, email, phone, sexual orientation</td>
                     </tr>
                     <tr>
                       <td className="border border-gray-300 px-4 py-2 font-semibold">Profile</td>
-                      <td className="border border-gray-300 px-4 py-2">photo, bio, social‑media handles, niche tags</td>
+                      <td className="border border-gray-300 px-4 py-2">photo, bio, social‑media handles, niche tags, audience size</td>
                     </tr>
                     <tr>
                       <td className="border border-gray-300 px-4 py-2 font-semibold">Booking</td>
