@@ -5,7 +5,12 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { FormData } from '@/types/form';
 
-export default function ContactForm() {
+interface ContactFormProps {
+  recipientEmail?: string;
+  title?: string;
+}
+
+export default function ContactForm({ recipientEmail = 'business@cliqit.co', title = 'Contact us' }: ContactFormProps) {
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -28,7 +33,7 @@ export default function ContactForm() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          to: 'business@cliqit.co',
+          to: recipientEmail,
           subject: 'New Contact Form Submission',
           text: `User Type: ${formData.userType}\nName: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}\nSocial Handle: ${formData.socialHandle}`,
           html: `
@@ -77,7 +82,7 @@ export default function ContactForm() {
 
   return (
     <div className="w-full bg-[#3C184E] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg">
-      <h2 className="text-white text-xl sm:text-2xl font-medium mb-4 sm:mb-6 text-center">Contact us</h2>
+      <h2 className="text-white text-xl sm:text-2xl font-medium mb-4 sm:mb-6 text-center">{title}</h2>
       
       {/* User Type Selection Tabs */}
       <label className="block text-white text-sm mb-2">I am</label>
