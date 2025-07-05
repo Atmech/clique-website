@@ -123,7 +123,7 @@ export default function PrivacyPolicy() {
                   <tbody>
                     <tr>
                       <td className="border border-gray-300 px-4 py-2 font-semibold">Identity & Contact</td>
-                      <td className="border border-gray-300 px-4 py-2">name, username, email, phone, sexual orientation</td>
+                      <td className="border border-gray-300 px-4 py-2">name, username, email, phone</td>
                     </tr>
                     <tr>
                       <td className="border border-gray-300 px-4 py-2 font-semibold">Profile</td>
