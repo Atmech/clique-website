@@ -72,7 +72,7 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-[#4A2B5C] text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 max-w-2xl mx-auto">
-              Ready to create something iconic? We'd love to hear from you!
+              Ready to create something iconic? We would love to hear from you!
             </p>
           </motion.div>
         </section>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                     Contact Information
                   </h2>
                   <p className="text-[#4A2B5C] text-lg mb-8">
-                    Have questions or need support? We're here to help you succeed.
+                    Have questions or need support? We are here to help you succeed.
                   </p>
                 </div>
 
