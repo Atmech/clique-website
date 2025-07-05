@@ -1,6 +1,7 @@
 'use client';
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import logo from '@/assets/images/logo/logo.png';
 
 export default function PrivacyPolicy() {
@@ -8,7 +9,7 @@ export default function PrivacyPolicy() {
     <div className="min-h-screen flex flex-col bg-[#F9F2FF]">
       {/* Header */}
       <header className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 flex items-center justify-between w-full">
-        <a href="/">
+        <Link href="/">
           <Image
             src={logo}
             alt="CLIQIT"
@@ -17,7 +18,7 @@ export default function PrivacyPolicy() {
             priority
             className="w-[120px] sm:w-[140px] md:w-[160px] h-auto"
           />
-        </a>
+        </Link>
       </header>
 
       {/* Main Content */}
@@ -38,7 +39,7 @@ export default function PrivacyPolicy() {
 
           <div className="prose prose-lg max-w-none text-[#4A2B5C]">
             <p className="mb-6">
-              This Privacy Policy describes how <strong>Cliqit Digital Media LLP</strong> ("<strong>Cliqit</strong>," "<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>") collects, uses, discloses, and safeguards your information when you visit <strong>cliqit.co</strong> (the "<em>Site</em>") or use the <strong>Cliqit</strong> mobile application and related dashboard (the "<em>Services</em>").
+              This Privacy Policy describes how <strong>Cliqit Digital Media LLP</strong> (&ldquo;<strong>Cliqit</strong>,&rdquo; &ldquo;<strong>we</strong>,&rdquo; &ldquo;<strong>us</strong>,&rdquo; or &ldquo;<strong>our</strong>&rdquo;) collects, uses, discloses, and safeguards your information when you visit <strong>cliqit.co</strong> (the &ldquo;<em>Site</em>&rdquo;) or use the <strong>Cliqit</strong> mobile application and related dashboard (the &ldquo;<em>Services</em>&rdquo;).
             </p>
             
             <p className="mb-6">
@@ -50,14 +51,14 @@ export default function PrivacyPolicy() {
             </p>
 
             <p className="text-sm italic mb-8">
-              <em>When we say "personal data," we mean information that identifies, relates to, or could reasonably be linked to you.</em>
+              <em>When we say &ldquo;personal data,&rdquo; we mean information that identifies, relates to, or could reasonably be linked to you.</em>
             </p>
 
             <hr className="my-8 border-gray-300" />
 
             <h2 className="text-2xl font-bold text-[#4A2B5C] mb-4">WHEN DOES THIS NOTICE APPLY?</h2>
             <ul className="list-disc pl-6 mb-6">
-              <li>Download or use our mobile application ("Cliqit").</li>
+              <li>Download or use our mobile application (&ldquo;Cliqit&rdquo;).</li>
               <li>Access the web dashboard to manage bookings.</li>
               <li>Interact with us by email, social media, or events.</li>
             </ul>
@@ -78,7 +79,7 @@ export default function PrivacyPolicy() {
             </p>
 
             <ul className="list-disc pl-6 mb-8">
-              <li><strong>Data we collect</strong> — identity, contact, profile, booking, location (with permission), device & log data, push tokens. We do <strong>not</strong> collect sensitive or children's data.</li>
+              <li><strong>Data we collect</strong> — identity, contact, profile, booking, location (with permission), device & log data, push tokens. We do <strong>not</strong> collect sensitive or children&apos;s data.</li>
               <li><strong>Why</strong> — to create accounts, match influencers with gigs, run maps & notifications, secure the service, and meet legal duties.</li>
               <li><strong>Sharing</strong> — only with service providers (Nhost, Firebase, OpenStreetMap, Razorpay/Stripe, Sentry), venues you apply to, and authorities when required.</li>
               <li><strong>Retention</strong> — account data = active + 30 days; booking data = 36 months; logs = 14–90 days; finance = 8 years.</li>
@@ -326,7 +327,7 @@ export default function PrivacyPolicy() {
 
             <section id="section10" className="mb-8">
               <h3 className="text-xl font-bold text-[#4A2B5C] mb-4">10. CONTROLS FOR DO‑NOT‑TRACK & PUSH NOTIFICATIONS</h3>
-              <p className="mb-4">Browsers' Do‑Not‑Track signals are not yet standardised, so we do not respond to them.</p>
+              <p className="mb-4">Browsers&apos; Do‑Not‑Track signals are not yet standardised, so we do not respond to them.</p>
               <p>Push tokens are stored by Apple/Google and may be disclosed under their lawful‑request policies.</p>
             </section>
 
@@ -341,7 +342,7 @@ export default function PrivacyPolicy() {
 
             <section id="section12" className="mb-8">
               <h3 className="text-xl font-bold text-[#4A2B5C] mb-4">12. CHANGES TO THIS POLICY</h3>
-              <p>We may update this Policy from time to time. We'll post the new version here and, for material changes, alert you by email or in‑app at least <strong>7 days</strong> in advance.</p>
+              <p>We may update this Policy from time to time. We&apos;ll post the new version here and, for material changes, alert you by email or in‑app at least <strong>7 days</strong> in advance.</p>
             </section>
 
             <hr className="my-8 border-gray-300" />
